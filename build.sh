@@ -24,4 +24,4 @@ make bacon -j8  > reading # Jangan di hapus text line (> reading)
 retVal=$?
 timeEnd
 statusBuild
-# Build ricedroid 2
+# Build ricedroid
