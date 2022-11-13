@@ -20,15 +20,15 @@ task:
   Load-Ccache_background_script:
      - ./script/load_ccache.sh
 
-  Sync-github:
+  Sync-github_repo:
      - git config --global user.name "IQ-7"
      - git config --global user.email "iq7.dev@gmail.com"
      - echo "$credentials" > ~/.git-credentials
      - git config --global credential.helper store --file=~/.git-credentials
 
-  Sync-gitlab:
+  Sync-gitlab_repo:
      - git config --global user.name "IQ-7"
-     - git config --global user.email "kuninganprojek@gmail.com"
+     - git config --global user.email "iq7.dev@gmail.com"
      - echo "$credentials2" > ~/.git-credentials
      - git config --global credential.helper store --file=~/.git-credentials
 
