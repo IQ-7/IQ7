@@ -24,9 +24,6 @@ task:
      - git config --global user.name "IQ-7"
      - git config --global user.email "iq7.dev@gmail.com"
      - echo "$credentials" > ~/.git-credentials
-     - git config --global credential.helper store --file=~/.git-credentials
-     - git config --global user.name "IQ-7"
-     - git config --global user.email "iq7.dev@gmail.com"
      - echo "$credentials2" > ~/.git-credentials
      - git config --global credential.helper store --file=~/.git-credentials
      - ./script/sync.sh
