@@ -3,9 +3,10 @@ env:
   TG_TOKEN: "ENCRYPTED[4548ed54125ed96f671e9293f5dae83eb2ff9bd7f830a3669a230c3b520251c2db68741624a40873eaf04c7b833f98c6]"
   TG_CHAT_ID: "ENCRYPTED[e209410340316d4a43d7428f1b6950c7f8261333ee89ca0f6091893fd874f9704ad6b6cb7cb67b0176dc3bbb883d027f]"
   WORKDIR: "/tmp"
-  EMAIL: "ENCRYPTED[8b52881ec0c502a4e354e34f8ab204411ddbe4d7d6519dd98a69160f66a1e4d5b18fa933c8d73c94e404dfa8904c9b7a]"
+  EMAIL: "ENCRYPTED[74a48d19b52c6256316eec9b2b46cf035770b1ac112f792e77519ae5f6a6a7999ee4aeca6ef04e4a653f21ee45d4191f]"
   CIRRUS_CLONE_DEPTH: "1"
   credentials: "ENCRYPTED[964de36519b4417341c66b9fe3bca7cb5a6374b87742c3456f641173ef33ea98d43122afc548d56044794987bcdef445]"
+  credentials2: "ENCRYPTED[c38439fc0f2a42fb356e6424a122630a90f40a1ba20c4c2cc339b9159dff37afab9706b5fb39f4c275a2e3d03d331a08]"
 
 task:
   name: "Setting Up, Syncing, Building and Uploading"
@@ -19,11 +20,19 @@ task:
   Load-Ccache_background_script:
      - ./script/load_ccache.sh
 
-  Sync-rom_script:
+  Sync-github:
      - git config --global user.name "IQ-7"
-     - git config --global user.email "kuninganprojek@gmail.com"
+     - git config --global user.email "iq7.dev@gmail.com"
      - echo "$credentials" > ~/.git-credentials
      - git config --global credential.helper store --file=~/.git-credentials
+
+  Sync-gitlab:
+     - git config --global user.name "IQ-7"
+     - git config --global user.email "kuninganprojek@gmail.com"
+     - echo "$credentials2" > ~/.git-credentials
+     - git config --global credential.helper store --file=~/.git-credentials
+
+  Sync-rom_script:
      - ./script/sync.sh
      
   Build-rom_script:
