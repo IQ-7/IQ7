@@ -6,7 +6,6 @@ env:
   EMAIL: "ENCRYPTED[74a48d19b52c6256316eec9b2b46cf035770b1ac112f792e77519ae5f6a6a7999ee4aeca6ef04e4a653f21ee45d4191f]"
   CIRRUS_CLONE_DEPTH: "1"
   credentials: "ENCRYPTED[964de36519b4417341c66b9fe3bca7cb5a6374b87742c3456f641173ef33ea98d43122afc548d56044794987bcdef445]"
-  credentials2: "ENCRYPTED[c38439fc0f2a42fb356e6424a122630a90f40a1ba20c4c2cc339b9159dff37afab9706b5fb39f4c275a2e3d03d331a08]"
 
 task:
   name: "Setting Up, Syncing, Building and Uploading"
@@ -20,19 +19,11 @@ task:
   Load-Ccache_background_script:
      - ./script/load_ccache.sh
 
-  Sync-github_repo:
+  Sync-rom_script:
      - git config --global user.name "IQ-7"
      - git config --global user.email "iq7.dev@gmail.com"
      - echo "$credentials" > ~/.git-credentials
      - git config --global credential.helper store --file=~/.git-credentials
-
-  Sync-gitlab_repo:
-     - git config --global user.name "IQ-7"
-     - git config --global user.email "iq7.dev@gmail.com"
-     - echo "$credentials2" > ~/.git-credentials
-     - git config --global credential.helper store --file=~/.git-credentials
-
-  Sync-rom_script:
      - ./script/sync.sh
      
   Build-rom_script:
