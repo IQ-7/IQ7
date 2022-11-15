@@ -24,4 +24,4 @@ make corvus -j8  > reading # Jangan di hapus text line (> reading)
 retVal=$?
 timeEnd
 statusBuild
-# Build ricedroid v8.0
+# Build
