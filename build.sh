@@ -1,6 +1,6 @@
 #sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/IQ-7/android_manifest -b 10 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/IQ-7/local_manifest --depth 1 -b corvus-12 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/RiceDroid/android -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/IQ-7/local_manifest --depth 1 -b rice-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -14,12 +14,12 @@ export KBUILD_BUILD_USER=zacky
 export KBUILD_BUILD_HOST=android-build
 export BUILD_USERNAME=zacky
 export BUILD_HOSTNAME=android-build
-lunch du_whyred-userdebug
+lunch lineage_whyred-userdebug
 mkfifo reading # Jangan di Hapus
 tee "${BUILDLOG}" < reading & # Jangan di Hapus
 build_message "Building Started" # Jangan di Hapus
 progress & # Jangan di Hapus
-make corvus -j8  > reading & sleep 95m # Jangan di hapus text line (> reading)
+make bacon -j8  > reading #& sleep 95m # Jangan di hapus text line (> reading)
 
 retVal=$?
 timeEnd
