@@ -1,18 +1,18 @@
 env:
-  RCLONECONFIG_DRIVE: "ENCRYPTED[e92b686e541d95dba286d0653011d1e0ca66f6b1e37df3a77d7ba3f1eac8348ea1b387317fa6a33cb03115fe43f1d698]"
-  TG_TOKEN: "ENCRYPTED[4548ed54125ed96f671e9293f5dae83eb2ff9bd7f830a3669a230c3b520251c2db68741624a40873eaf04c7b833f98c6]"
-  TG_CHAT_ID: "ENCRYPTED[e209410340316d4a43d7428f1b6950c7f8261333ee89ca0f6091893fd874f9704ad6b6cb7cb67b0176dc3bbb883d027f]"
+  RCLONECONFIG_DRIVE: ""
+  TG_TOKEN: ""
+  TG_CHAT_ID: ""
   WORKDIR: "/tmp"
-  EMAIL: "ENCRYPTED[74a48d19b52c6256316eec9b2b46cf035770b1ac112f792e77519ae5f6a6a7999ee4aeca6ef04e4a653f21ee45d4191f]"
+  EMAIL: ""
   CIRRUS_CLONE_DEPTH: "1"
-  credentials: "ENCRYPTED[c38439fc0f2a42fb356e6424a122630a90f40a1ba20c4c2cc339b9159dff37afab9706b5fb39f4c275a2e3d03d331a08]"
+  credentials: ""
 
 task:
   name: "Setting Up, Syncing, Building and Uploading"
   only_if: $CIRRUS_REPO_OWNER == 'IQ-7'
   timeout_in: 120m
   container:
-    image: anggit86/ubuntu:22.04
+    image: zacky46/home:22.04
     cpu: 8
     memory: 32G
 
