@@ -8,10 +8,6 @@ source $CIRRUS_WORKING_DIR/config
 timeStart
 
 source build/envsetup.sh
-export TZ=Asia/Jakarta
-export WITH_GAPPS=true
-export KBUILD_BUILD_USER=zacky
-export KBUILD_BUILD_HOST=android-build
 export BUILD_USERNAME=zacky
 export BUILD_HOSTNAME=android-build
 lunch nad_whyred-userdebug
