@@ -1,4 +1,4 @@
-#sync rom
+# sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/IQ-7/android -b 10 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/IQ-7/local_manifest --depth 1 -b nad-10 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
