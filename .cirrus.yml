@@ -1,8 +1,7 @@
+env:
+
 task:
-  name: "Admin Builder"
-  skip: $CIRRUS_BRANCH == 'master'
-  only_if: $CIRRUS_USER_PERMISSION == 'admin'
-  stateful: true
+  name: "Setting Up, Syncing, Building and Uploading..."
   timeout_in: 120m
   container:
     image: zacky46/ubuntu:22.04
